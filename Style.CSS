@@ -1,0 +1,149 @@
+/* Reset e Variáveis de Alto Contraste */
+:root {
+    --cor-fundo: #121212; /* Fundo escuro para conforto visual */
+    --cor-texto: #FFFFFF;
+    --cor-primaria: #00FF66; /* Verde limão de alto contraste */
+    --cor-detalhe: #1E1E1E;
+    --cor-foco: #FFCC00; /* Amarelo bem visível para navegação por teclado */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    font-size: 1.125rem; /* Fonte ligeiramente maior (18px) para melhor leitura */
+}
+
+/* Link de acessibilidade escondido (aparece ao usar TAB) */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--cor-primaria);
+    color: #000;
+    padding: 10px;
+    z-index: 100;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* Indicador de Foco Global (Crucial para acessibilidade) */
+a:focus, button:focus {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 2px;
+}
+
+/* Header e Menu */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--cor-detalhe);
+    border-bottom: 2px solid var(--cor-primaria);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cor-primaria);
+}
+
+/* Botão Hambúrguer */
+.menu-toggle {
+    background: none;
+    border: 2px solid var(--cor-primaria);
+    color: var(--cor-primaria);
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+/* Estilização da Lista do Menu */
+nav {
+    display: none; /* Escondido por padrão */
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background-color: var(--cor-detalhe);
+    border: 2px solid var(--cor-primaria);
+    width: 200px;
+    border-radius: 5px;
+}
+
+nav.active {
+    display: block; /* Mostra quando ativo */
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px;
+    color: var(--cor-texto);
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+}
+
+nav ul li a:hover {
+    background-color: var(--cor-primaria);
+    color: #000;
+}
+
+/* Conteúdo Principal */
+main {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+}
+
+.topicos h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--cor-primaria);
+    padding-left: 10px;
+}
+
+.card {
+    background-color: var(--cor-detalhe);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.card h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #888;
+    border-top: 1px solid #333;
+}
