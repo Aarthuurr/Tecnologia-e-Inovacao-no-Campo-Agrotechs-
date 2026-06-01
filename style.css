@@ -1,10 +1,10 @@
-/* Reset e Variáveis de Alto Contraste */
 :root {
-    --cor-fundo: #121212; /* Fundo escuro para conforto visual */
+    --cor-fundo: #121212; 
     --cor-texto: #FFFFFF;
-    --cor-primaria: #00FF66; /* Verde limão de alto contraste */
+    --cor-primaria: #00FF66; 
     --cor-detalhe: #1E1E1E;
-    --cor-foco: #FFCC00; /* Amarelo bem visível para navegação por teclado */
+    --cor-foco: #FFCC00; 
+    --cor-input: #2D2D2D;
 }
 
 * {
@@ -18,10 +18,10 @@ body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     line-height: 1.6;
-    font-size: 1.125rem; /* Fonte ligeiramente maior (18px) para melhor leitura */
+    font-size: 1.125rem; 
 }
 
-/* Link de acessibilidade escondido (aparece ao usar TAB) */
+/* Link de acessibilidade */
 .skip-link {
     position: absolute;
     top: -100px;
@@ -30,13 +30,15 @@ body {
     color: #000;
     padding: 10px;
     z-index: 100;
+    text-decoration: none;
+    font-weight: bold;
 }
 .skip-link:focus {
     top: 0;
 }
 
-/* Indicador de Foco Global (Crucial para acessibilidade) */
-a:focus, button:focus {
+/* Indicador de Foco Global */
+a:focus, button:focus, input:focus, textarea:focus {
     outline: 3px solid var(--cor-foco);
     outline-offset: 2px;
 }
@@ -49,6 +51,8 @@ header {
     padding: 20px;
     background-color: var(--cor-detalhe);
     border-bottom: 2px solid var(--cor-primaria);
+    position: relative;
+    z-index: 10;
 }
 
 .logo {
@@ -57,7 +61,6 @@ header {
     color: var(--cor-primaria);
 }
 
-/* Botão Hambúrguer */
 .menu-toggle {
     background: none;
     border: 2px solid var(--cor-primaria);
@@ -66,22 +69,30 @@ header {
     cursor: pointer;
     font-size: 1rem;
     border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-/* Estilização da Lista do Menu */
+.menu-toggle:hover {
+    background-color: var(--cor-primaria);
+    color: #000;
+}
+
+/* Navegação Mobile por padrão */
 nav {
-    display: none; /* Escondido por padrão */
+    display: none; 
     position: absolute;
-    top: 80px;
+    top: 100%;
     right: 20px;
     background-color: var(--cor-detalhe);
     border: 2px solid var(--cor-primaria);
     width: 200px;
     border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
 }
 
 nav.active {
-    display: block; /* Mostra quando ativo */
+    display: block; 
 }
 
 nav ul {
@@ -94,6 +105,7 @@ nav ul li a {
     color: var(--cor-texto);
     text-decoration: none;
     border-bottom: 1px solid #333;
+    transition: background 0.2s;
 }
 
 nav ul li a:hover {
@@ -104,46 +116,139 @@ nav ul li a:hover {
 /* Conteúdo Principal */
 main {
     padding: 40px 20px;
-    max-width: 800px;
+    max-width: 1000px; /* Aumentado para acomodar grids */
     margin: 0 auto;
 }
 
 .hero {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     text-align: center;
+    padding: 40px 0;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: var(--cor-primaria);
     margin-bottom: 15px;
 }
 
+.topicos {
+    margin-bottom: 60px;
+}
+
 .topicos h2 {
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     border-left: 5px solid var(--cor-primaria);
     padding-left: 10px;
 }
 
+/* Sistema de Grid Responsivo para os Cards */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
 .card {
     background-color: var(--cor-detalhe);
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 25px;
     border-radius: 8px;
     border: 1px solid #333;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+    border-color: var(--cor-primaria);
+    transform: translateY(-2px);
 }
 
 .card h3 {
     color: var(--cor-primaria);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+/* Formulário de Contato */
+.form-contato {
+    background-color: var(--cor-detalhe);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--cor-input);
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.btn-enviar {
+    background-color: var(--cor-primaria);
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+.btn-enviar:hover {
+    background-color: #00cc52;
 }
 
 footer {
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    font-size: 0.9rem;
+    padding: 30px 20px;
+    margin-top: 60px;
+    font-size: 0.95rem;
     color: #888;
     border-top: 1px solid #333;
+    background-color: var(--cor-detalhe);
+}
+
+/* Layout para Telas Maiores (Desktop) */
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none; /* Esconde o botão hambúrguer no desktop */
+    }
+
+    nav {
+        display: block; /* Mostra o menu horizontalmente */
+        position: static;
+        width: auto;
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 20px;
+    }
+
+    nav ul li a {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+    }
 }

@@ -17,6 +17,7 @@
             <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
             </span>
+            <span class="menu-text">Abrir Menu</span>
         </button>
 
         <nav id="menu-principal" aria-hidden="true">
@@ -30,7 +31,7 @@
     </header>
 
     <main id="conteudo-principal">
-        <section class="hero">
+        <section id="home" class="hero">
             <h1>Tecnologia e Inovação no Campo</h1>
             <p>Conectando a tecnologia de ponta ao produtor rural para um futuro mais sustentável e produtivo.</p>
         </section>
@@ -38,17 +39,63 @@
         <section id="tecnologias" class="topicos">
             <h2>Principais Tecnologias das Agrotechs</h2>
             
-            <fazendoarticle class="card">
-                <h3>1. Drones e Sensores IoT</h3>
-                <p>Monitoramento em tempo real da saúde da lavoura, identificando pragas e mapeando o solo com precisão cirúrgica sem desperdício de recursos.</p>
-            </article>
+            <div class="grid-cards">
+                <article class="card">
+                    <h3>1. Drones e Sensores IoT</h3>
+                    <p>Monitoramento em tempo real da saúde da lavoura, identificando pragas e mapeando o solo com precisão cirúrgica sem desperdício de recursos.</p>
+                </article>
 
-            <article class="card">
-                <h3>2. Inteligência Artificial no Campo</h3>
-                <p>Algoritmos que prevêem mudanças climáticas severas e ajudam o produtor a decidir o momento exato do
+                <article class="card">
+                    <h3>2. Inteligência Artificial no Campo</h3>
+                    <p>Algoritmos que preveem mudanças climáticas severas, analisam dados históricos e ajudam o produtor a decidir o momento exato do plantio e da colheita.</p>
+                </article>
 
+                <article class="card">
+                    <h3>3. Maquinário Autônomo</h3>
+                    <p>Tratores e colheitadeiras guiados por GPS de alta precisão que operam 24/7, otimizando o tempo de trabalho e reduzindo o consumo de combustível.</p>
+                </article>
+            </div>
+        </section>
 
-</body>
+        <section id="impacto" class="topicos">
+            <h2>Impacto no Campo</h2>
+            <div class="grid-cards">
+                <div class="card beneficio">
+                    <h3>Sustentabilidade</h3>
+                    <p>Redução drástica no uso de defensivos químicos e economia de água através da irrigação inteligente.</p>
+                </div>
+                <div class="card beneficio">
+                    <h3>Produtividade</h3>
+                    <p>Aumento da eficiência por hectare, garantindo maior rentabilidade para o pequeno, médio e grande produtor.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="topicos">
+            <h2>Entre em Contato</h2>
+            <p>Quer levar a inovação para a sua propriedade? Mande uma mensagem para nossa equipe.</p>
+            <form class="form-contato">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AgroTech Inovação. Todos os direitos reservados. Focado em Acessibilidade.</p>
+    </footer>
+
     <script src="script.js"></script>
+</body>
 </html>
-                    
