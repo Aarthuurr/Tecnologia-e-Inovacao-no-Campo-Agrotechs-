@@ -1,10 +1,13 @@
 :root {
-    --cor-fundo: #121212; 
-    --cor-texto: #FFFFFF;
-    --cor-primaria: #00FF66; 
-    --cor-detalhe: #1E1E1E;
-    --cor-foco: #FFCC00; 
-    --cor-input: #2D2D2D;
+    --cor-fundo: #0b0f19; 
+    --cor-texto: #f3f4f6;
+    --cor-texto-mutado: #9ca3af;
+    --cor-primaria: #10b981; /* Verde esmeralda moderno */
+    --cor-primaria-hover: #059669;
+    --cor-detalhe: #162235; /* Superfícies dos cards */
+    --cor-foco: #3b82f6; 
+    --cor-input: #1f293d;
+    --border-color: #24334d;
 }
 
 * {
@@ -13,15 +16,19 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     line-height: 1.6;
-    font-size: 1.125rem; 
+    font-size: 1rem;
 }
 
-/* Link de acessibilidade */
+/* Acessibilidade */
 .skip-link {
     position: absolute;
     top: -100px;
@@ -30,242 +37,279 @@ body {
     color: #000;
     padding: 10px;
     z-index: 100;
-    text-decoration: none;
     font-weight: bold;
 }
-.skip-link:focus {
-    top: 0;
-}
+.skip-link:focus { top: 0; }
 
-/* Indicador de Foco Global */
 a:focus, button:focus, input:focus, textarea:focus {
     outline: 3px solid var(--cor-foco);
     outline-offset: 2px;
 }
 
-/* Header e Menu */
+/* Header & Menu Correção Completa */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: var(--cor-detalhe);
-    border-bottom: 2px solid var(--cor-primaria);
-    position: relative;
-    z-index: 10;
+    padding: 18px 5%;
+    background-color: rgba(22, 34, 53, 0.95);
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+.logo-highlight {
     color: var(--cor-primaria);
 }
 
-/* Botão do Menu Hambúrguer */
+/* Botão do Menu Hambúrguer Corrigido */
 .menu-toggle {
     display: flex;
     align-items: center;
-    background: none;
-    border: 2px solid var(--cor-primaria);
-    color: var(--cor-primaria);
-    padding: 8px 12px;
+    gap: 12px; /* Fornece distanciamento controlado do texto para o ícone */
+    background: #1f293d;
+    border: 1px solid var(--border-color);
+    color: var(--cor-texto);
+    padding: 10px 16px;
     cursor: pointer;
     font-size: 0.9rem;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: all 0.3s ease;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.2s ease;
 }
-
 .menu-toggle:hover {
-    background-color: var(--cor-primaria);
-    color: #000;
+    background: var(--cor-detalhe);
+    border-color: var(--cor-primaria);
 }
 
-/* Estrutura das linhas do Hambúrguer */
 .hamburger-box {
-    width: 20px;
-    height: 14px;
-    display: inline-block;
+    width: 18px;
+    height: 12px;
     position: relative;
-    margin-right: 8px;
+    display: inline-block;
 }
 
 .hamburger-inner, 
 .hamburger-inner::before, 
 .hamburger-inner::after {
-    width: 20px;
+    width: 18px;
     height: 2px;
     background-color: var(--cor-primaria);
     position: absolute;
-    border-radius: 2px;
-    transition: transform 0.25s ease, opacity 0.25s ease, background-color 0.25s ease;
+    border-radius: 4px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
+.hamburger-inner { top: 50%; transform: translateY(-50%); }
+.hamburger-inner::before { content: ""; top: -5px; left: 0; }
+.hamburger-inner::after { content: ""; bottom: -5px; left: 0; }
 
-.hamburger-inner {
-    top: 50%;
-    transform: translateY(-50%);
-}
+/* Animação do Estado Ativo do Menu Hambúrguer */
+.menu-toggle.active .hamburger-inner { background-color: transparent; }
+.menu-toggle.active .hamburger-inner::before { transform: translateY(5px) rotate(45deg); }
+.menu-toggle.active .hamburger-inner::after { transform: translateY(-5px) rotate(-45deg); }
 
-.hamburger-inner::before {
-    content: "";
-    top: -6px;
-    left: 0;
-}
-
-.hamburger-inner::after {
-    content: "";
-    bottom: -6px;
-    left: 0;
-}
-
-/* Efeito Hover nas linhas do menu */
-.menu-toggle:hover .hamburger-inner,
-.menu-toggle:hover .hamburger-inner::before,
-.menu-toggle:hover .hamburger-inner::after {
-    background-color: #000;
-}
-
-/* Animação: Transforma o Hambúrguer em X */
-.menu-toggle.active .hamburger-inner {
-    background-color: transparent;
-}
-
-.menu-toggle.active .hamburger-inner::before {
-    transform: translateY(6px) rotate(45deg);
-}
-
-.menu-toggle.active .hamburger-inner::after {
-    transform: translateY(-6px) rotate(-45deg);
-}
-
-/* Navegação Mobile por padrão */
+/* Menu Lateral Mobile */
 nav {
-    display: none; 
+    display: none;
     position: absolute;
     top: 100%;
-    right: 20px;
+    right: 5%;
     background-color: var(--cor-detalhe);
-    border: 2px solid var(--cor-primaria);
-    width: 200px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+    border: 1px solid var(--border-color);
+    width: 220px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
-
-nav.active {
-    display: block; 
-}
-
-nav ul {
-    list-style: none;
-}
-
+nav.active { display: block; }
+nav ul { list-style: none; }
 nav ul li a {
     display: block;
-    padding: 15px;
+    padding: 14px 20px;
     color: var(--cor-texto);
     text-decoration: none;
-    border-bottom: 1px solid #333;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border-color);
     transition: background 0.2s;
 }
+nav ul li a:hover { background-color: var(--cor-input); color: var(--cor-primaria); }
 
-nav ul li a:hover {
-    background-color: var(--cor-primaria);
-    color: #000;
-}
-
-/* Conteúdo Principal */
+/* Área Principal do Site */
 main {
-    padding: 40px 20px;
-    max-width: 1000px;
+    padding: 120px 5% 40px 5%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
+/* Layout Hero Bonito e Responsivo */
 .hero {
-    margin-bottom: 60px;
-    text-align: center;
-    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    padding: 40px 0 60px 0;
 }
-
-/* Títulos modernos com efeito gradiente tech */
-.hero h1, .topicos h2 {
-    background: linear-gradient(45deg, var(--cor-primaria), #00b3ff);
+.hero-content h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: linear-gradient(120deg, #fff, var(--cor-primaria));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.hero-content p {
+    color: var(--cor-texto-mutado);
+    font-size: 1.15rem;
+    margin-bottom: 30px;
+}
+.btn-primary {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: #0b0f19;
+    padding: 14px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background 0.2s;
+}
+.btn-primary:hover { background-color: var(--cor-primaria-hover); }
 
-.hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 15px;
+.hero-image img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
-.topicos {
-    margin-bottom: 60px;
+/* Seção de Métricas */
+.section-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 80px;
+    background: linear-gradient(90deg, var(--cor-detalhe), #111a28);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
 }
+.stat-card h2 { font-size: 2.5rem; color: var(--cor-primaria); margin-bottom: 5px; }
+.stat-card p { color: var(--cor-texto-mutado); font-size: 0.95rem; font-weight: 500; }
 
-.topicos h2 {
-    font-size: 2rem;
-    margin-bottom: 25px;
-    border-left: 5px solid var(--cor-primaria);
-    padding-left: 10px;
-    -webkit-text-fill-color: initial; /* Mantém a borda esquerda visível e aplica cor base */
-    color: var(--cor-texto);
-}
+/* Configurações de Títulos Globais */
+.section-header { margin-bottom: 40px; }
+.section-header h2, .topicos h2 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
+.section-header p { color: var(--cor-texto-mutado); }
 
-/* Sistema de Grid Responsivo para os Cards */
+/* Grid de Cards com Imagens */
 .grid-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
 }
-
 .card {
     background-color: var(--cor-detalhe);
-    padding: 25px;
-    border-radius: 8px;
-    border: 1px solid #333;
-    transition: transform 0.2s, border-color 0.2s;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
-
 .card:hover {
+    transform: translateY(-5px);
     border-color: var(--cor-primaria);
-    transform: translateY(-2px);
 }
+.card-img-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+.card:hover .card-img-wrapper img { transform: scale(1.05); }
+.card-body { padding: 25px; }
+.card-body h3 { font-size: 1.3rem; margin-bottom: 12px; color: #fff; }
+.card-body p { color: var(--cor-texto-mutado); font-size: 0.95rem; }
 
-.card h3 {
-    color: var(--cor-primaria);
+/* Estilos de Impacto/Benefícios */
+.icon-badge {
+    font-size: 2rem;
     margin-bottom: 15px;
-    font-size: 1.3rem;
 }
+.beneficio { padding: 30px; }
+.beneficio h3 { margin-bottom: 10px; }
+.beneficio p { color: var(--cor-texto-mutado); }
 
-/* Formulário de Contato */
-.form-contato {
+/* Layout Split para Formulário Moderno */
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
     background-color: var(--cor-detalhe);
-    padding: 30px;
-    border-radius: 8px;
-    border: 1px solid #333;
-    max-width: 600px;
-    margin: 0 auto;
+    padding: 40px 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
 }
+.form-info h2 { font-size: 2rem; margin-bottom: 15px; }
+.form-info p { color: var(--cor-texto-mutado); margin-bottom: 25px; }
+.contact-meta { display: flex; flex-direction: column; gap: 10px; font-weight: 500; color: var(--cor-primaria); }
 
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
+.form-contato { display: flex; flex-direction: column; gap: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-size: 0.9rem; font-weight: 600; }
 .form-group input, .form-group textarea {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     background-color: var(--cor-input);
-    border: 1px solid #444;
+    border: 1px solid var(--border-color);
     color: #fff;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 1rem;
+    transition: border-color 0.2s;
 }
+.form-group input:focus, .form-group textarea:focus { border-color: var(--cor-primaria); }
 
 .btn-enviar {
-    background-color: var
+    background-color: var(--cor-primaria);
+    color: #0b0f19;
+    border: none;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-enviar:hover { background-color: var(--cor-primaria-hover); }
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--cor-texto-mutado);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+    background-color: #0a0e17;
+}
+
+/* --- Layout para Telas Maiores (Desktop) --- */
+@media (min-width: 768px) {
+    header { padding: 18px 8%; }
+    main { padding: 140px 8% 60px 8%; }
+    
+    .hero { flex-direction: row; gap: 60px; }
+    .hero-content, .hero-image { flex: 1; }
+    .hero-

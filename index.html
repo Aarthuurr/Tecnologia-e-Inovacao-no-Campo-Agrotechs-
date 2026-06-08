@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroTech Inovação - Tecnologia no Campo</title>
+    <title>AgroTech Inovação - O Futuro do Campo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,20 +11,23 @@
     <a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
 
     <header>
-        <div class="logo">AgroTech Inovação</div>
+        <div class="logo">
+            <span class="logo-icon">🌱</span> AgroTech <span class="logo-highlight">Inovação</span>
+        </div>
         
         <button class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu-principal">
             <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
             </span>
-            <span class="menu-text">Abrir Menu</span>
+            <span class="menu-text">Menu</span>
         </button>
 
         <nav id="menu-principal" aria-hidden="true">
             <ul>
                 <li><a href="#home">Início</a></li>
                 <li><a href="#tecnologias">Tecnologias</a></li>
-                <li><a href="#impacto">Impacto no Campo</a></li>
+                <li><a href="#metricas">Resultados</a></li>
+                <li><a href="#impacto">Impacto</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
@@ -32,68 +35,119 @@
 
     <main id="conteudo-principal">
         <section id="home" class="hero">
-            <h1>Tecnologia e Inovação no Campo</h1>
-            <p>Conectando a tecnologia de ponta ao produtor rural para um futuro mais sustentável e produtivo.</p>
+            <div class="hero-content">
+                <h1>Tecnologia e Inovação que Transformam o Campo</h1>
+                <p>Conectando inteligência artificial, dados e automação de ponta ao produtor rural para criar uma agricultura mais sustentável, previsível e altamente lucrativa.</p>
+                <a href="#contato" class="btn-primary">Agendar Demonstração</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=800&q=80" alt="Trator inteligente operando em campo tecnológico sob o pôr do sol">
+            </div>
+        </section>
+
+        <section id="metricas" class="section-stats">
+            <div class="stat-card">
+                <h2>+35%</h2>
+                <p>De Eficiência Produtiva</p>
+            </div>
+            <div class="stat-card">
+                <h2>-40%</h2>
+                <p>Uso de Recursos Hídricos</p>
+            </div>
+            <div class="stat-card">
+                <h2>24/7</h2>
+                <p>Monitoramento Ativo</p>
+            </div>
         </section>
 
         <section id="tecnologias" class="topicos">
-            <h2>Principais Tecnologias das Agrotechs</h2>
+            <div class="section-header">
+                <h2>Principais Soluções Agrotechs</h2>
+                <p>O que há de mais avançado no mercado global para modernizar sua produção.</p>
+            </div>
             
             <div class="grid-cards">
                 <article class="card">
-                    <h3>1. Drones e Sensores IoT</h3>
-                    <p>Monitoramento em tempo real da saúde da lavoura, identificando pragas e mapeando o solo com precisão cirúrgica sem desperdício de recursos.</p>
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1527525443983-6e60c75ffe46?auto=format&fit=crop&w=500&q=80" alt="Drone sobrevoando plantação verdejante">
+                    </div>
+                    <div class="card-body">
+                        <h3>Drones e Sensores IoT</h3>
+                        <p>Monitoramento em tempo real da saúde da lavoura, identificando pragas precoce e mapeando o solo com precisão cirúrgica sem desperdícios.</p>
+                    </div>
                 </article>
 
                 <article class="card">
-                    <h3>2. Inteligência Artificial no Campo</h3>
-                    <p>Algoritmos que preveem mudanças climáticas severas, analisam dados históricos e ajudam o produtor a decidir o momento exato do plantio e da colheita.</p>
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?auto=format&fit=crop&w=500&q=80" alt="Tablet mostrando gráficos agrícolas no meio do campo">
+                    </div>
+                    <div class="card-body">
+                        <h3>Inteligência Artificial</h3>
+                        <p>Algoritmos analisam dados históricos e climáticos para prever ameaças com precisão, auxiliando na tomada de decisão rápida e segura.</p>
+                    </div>
                 </article>
 
                 <article class="card">
-                    <h3>3. Maquinário Autônomo</h3>
-                    <p>Tratores e colheitadeiras guiados por GPS de alta precisão que operam 24/7, otimizando o tempo de trabalho e reduzindo o consumo de combustível.</p>
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1592982537447-6f2a6a0c7c18?auto=format&fit=crop&w=500&q=80" alt="Maquinário moderno colhendo grãos de forma autônoma">
+                    </div>
+                    <div class="card-body">
+                        <h3>Maquinário Autônomo</h3>
+                        <p>Tratores e colheitadeiras controlados por telemetria avançada que operam com rotas otimizadas, poupando tempo e combustível.</p>
+                    </div>
                 </article>
             </div>
         </section>
 
-        <section id="impacto" class="topicos">
-            <h2>Impacto no Campo</h2>
-            <div class="grid-cards">
-                <div class="card beneficio">
-                    <h3>Sustentabilidade</h3>
-                    <p>Redução drástica no uso de defensivos químicos e economia de água através da irrigação inteligente.</p>
+        <section id="impacto" class="topicos impacto-section">
+            <div class="section-header">
+                <h2>Impacto Sustentável e Econômico</h2>
+            </div>
+            <div class="grid-cards layout-split">
+                <div class="card beneficio card-sustentavel">
+                    <div class="icon-badge">🍃</div>
+                    <h3>Sustentabilidade Aplicada</h3>
+                    <p>Redução drástica no uso de insumos químicos e otimização total da água por microgotejamento guiado por dados meteorológicos precisos.</p>
                 </div>
-                <div class="card beneficio">
-                    <h3>Produtividade</h3>
-                    <p>Aumento da eficiência por hectare, garantindo maior rentabilidade para o pequeno, médio e grande produtor.</p>
+                <div class="card beneficio card-produtivo">
+                    <div class="icon-badge">📈</div>
+                    <h3>Produtividade Exponencial</h3>
+                    <p>Aumento real da rentabilidade financeira por hectare, gerando competitividade tanto para o pequeno produtor quanto para cooperativas de grande porte.</p>
                 </div>
             </div>
         </section>
 
         <section id="contato" class="topicos">
-            <h2>Entre em Contato</h2>
-            <p>Quer levar a inovação para a sua propriedade? Mande uma mensagem para nossa equipe.</p>
-            <form class="form-contato">
-                <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
+            <div class="form-container">
+                <div class="form-info">
+                    <h2>Pronto para inovar na sua lavoura?</h2>
+                    <p>Fale com um de nossos engenheiros agônomos e especialistas em tecnologia para montar um plano personalizado para sua fazenda.</p>
+                    <div class="contact-meta">
+                        <span>📍 Atendimento em todo o Brasil</span>
+                        <span>⚡ Resposta em até 24h úteis</span>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn-enviar">Enviar Mensagem</button>
-            </form>
+                <form class="form-contato">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail Profissional</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Como podemos ajudar sua propriedade?</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Fale brevemente sobre sua cultura atual (soja, milho, café...)" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-enviar">Solicitar Diagnóstico Gratuito</button>
+                </form>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 AgroTech Inovação. Todos os direitos reservados. Focado em Acessibilidade.</p>
+        <p>&copy; 2026 AgroTech Inovação. Desenvolvimento de Alta Performance & Acessibilidade.</p>
     </footer>
 
     <script src="script.js"></script>
