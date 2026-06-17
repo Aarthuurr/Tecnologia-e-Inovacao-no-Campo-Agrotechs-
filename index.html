@@ -4,19 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgroTech Inovação - O Futuro do Campo</title>
-    <style>
-        /* Estilo básico para garantir que as imagens carreguem com tamanho correto */
-        .card-img-wrapper img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -27,7 +15,12 @@
             <span class="logo-icon">🌱</span> AgroTech <span class="logo-highlight">Inovação</span>
         </div>
         
-        <nav id="menu-principal">
+        <button class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu-principal">
+            <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+            <span class="menu-text">Menu</span>
+        </button>
+
+        <nav id="menu-principal" aria-hidden="true">
             <ul>
                 <li><a href="#home">Início</a></li>
                 <li><a href="#tecnologias">Tecnologias</a></li>
@@ -42,6 +35,45 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <h1>Tecnologia e Inovação que Transformam o Campo</h1>
-                <p>Conectando inteligência artificial, dados e automação de ponta ao produtor rural para criar uma agricultura mais sustentável, previsível e altamente lucrativa.</p>
+                <p>Conectando inteligência artificial, dados e automação de ponta ao produtor rural.</p>
                 <a href="#contato" class="btn-primary">Agendar Demonstração</a>
             </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1595967784339-3834adb43c77?auto=format&fit=crop&w=800&q=80" alt="Trator inteligente">
+            </div>
+        </section>
+
+        <section id="metricas" class="section-stats">
+            <div class="stat-card"><h2>+35%</h2><p>Eficiência Produtiva</p></div>
+            <div class="stat-card"><h2>-40%</h2><p>Uso de Recursos Hídricos</p></div>
+            <div class="stat-card"><h2>24/7</h2><p>Monitoramento</p></div>
+        </section>
+
+        <section id="tecnologias" class="topicos">
+            <div class="grid-cards">
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1506953923946-b6058e0a3540?auto=format&fit=crop&w=500&q=80" alt="Drones">
+                    </div>
+                    <div class="card-body"><h3>Drones e Sensores IoT</h3><p>Monitoramento em tempo real.</p></div>
+                </article>
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1574943320219-555620357597?auto=format&fit=crop&w=500&q=80" alt="IA">
+                    </div>
+                    <div class="card-body"><h3>Inteligência Artificial</h3><p>Análise de dados climáticos.</p></div>
+                </article>
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=500&q=80" alt="Autônomo">
+                    </div>
+                    <div class="card-body"><h3>Maquinário Autônomo</h3><p>Telemetria avançada.</p></div>
+                </article>
+            </div>
+        </section>
+        
+        </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
