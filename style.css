@@ -329,3 +329,20 @@ img {
     display: block;
     max-width: 100%;
 }
+.hero-image {
+    width: 100%;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+img {
+    border: 3px solid red;
+}
